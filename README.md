@@ -2,16 +2,16 @@
 
 
 ## Models
-User -> Devise
-Projects ->
-Roster
-Schedule ->
-Employees
-Client
-AdminUser -> STI
-ProjectManagers
-ShiftManagers
-Time
+-User -> Devise
+-Projects ->
+-Roster
+-Schedule ->
+-Employees
+-Client
+-AdminUser -> STI
+-ProjectManagers
+-ShiftManagers
+-Time
 
 ## Features
 - Administrate admin Dashboard
