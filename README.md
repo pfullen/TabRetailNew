@@ -1,5 +1,7 @@
 ## Tab Retail Project App
 
+- Ruby Version  ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-linux]
+- Rails Version Rails 5.0.4
 
 ## Models
 -User -> Devise
