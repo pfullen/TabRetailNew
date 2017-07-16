@@ -2,6 +2,7 @@
 RSpec.describe Post, type: :model do
   describe "Creation" do
     before do
+      user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Jon", last_name: "Snow")
       @post = Post.create(date: Date.today, rationale: "Anything")
     end
 
