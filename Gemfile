@@ -54,6 +54,7 @@ group :development do
 end
 
 gem 'devise', '~> 4.2.0'
+gem 'gritter', '~> 1.2.0'
 #gem 'pry-rails', :group => :development
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
