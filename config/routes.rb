@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :travel_infos
   resources :shifts
   resources :schedules
   resources :rosters
