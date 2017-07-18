@@ -1,0 +1,2 @@
+class ShiftManager < Contact
+end
