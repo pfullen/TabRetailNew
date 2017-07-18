@@ -1,0 +1,2 @@
+class PerdiemsController < ApplicationController
+end

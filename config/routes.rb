@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :perdiems
   resources :employees
   resources :expense_codes
   resources :projects
