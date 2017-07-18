@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718125055) do
+ActiveRecord::Schema.define(version: 20170718150835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,6 +102,33 @@ ActiveRecord::Schema.define(version: 20170718125055) do
     t.datetime "updated_at",       null: false
   end
 
+  create_table "rosters", force: :cascade do |t|
+    t.integer  "project_id"
+    t.string   "employee_name"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["project_id"], name: "index_rosters_on_project_id", using: :btree
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.integer  "project_id"
+    t.date     "week_of"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_schedules_on_project_id", using: :btree
+  end
+
+  create_table "shifts", force: :cascade do |t|
+    t.integer  "schedule_id"
+    t.integer  "employee_id"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.text     "notes"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["schedule_id"], name: "index_shifts_on_schedule_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -126,4 +153,7 @@ ActiveRecord::Schema.define(version: 20170718125055) do
   add_foreign_key "perdiems", "employees"
   add_foreign_key "posts", "users"
   add_foreign_key "project_types", "projects"
+  add_foreign_key "rosters", "projects"
+  add_foreign_key "schedules", "projects"
+  add_foreign_key "shifts", "schedules"
 end

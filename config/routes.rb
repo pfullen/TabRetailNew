@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :shifts
+  resources :schedules
+  resources :rosters
   resources :project_types
   resources :perdiems
   resources :employees
