@@ -1,5 +1,9 @@
+
 class Employee < ApplicationRecord
-	has_one :expense_codes
-	has_one :perdiems
-	has_many :notes
+
+has_many :perdiems
+has_many :expense_codes
+belongs_to :roster
+belongs_to :shift
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718152910) do
+ActiveRecord::Schema.define(version: 20170718171550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,10 @@ ActiveRecord::Schema.define(version: 20170718152910) do
     t.string   "type"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "shift_id"
+    t.integer  "roster_id"
+    t.index ["roster_id"], name: "index_employees_on_roster_id", using: :btree
+    t.index ["shift_id"], name: "index_employees_on_shift_id", using: :btree
   end
 
   create_table "expense_codes", force: :cascade do |t|
@@ -115,6 +119,8 @@ ActiveRecord::Schema.define(version: 20170718152910) do
     t.string   "employee_name"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "employee_id"
+    t.index ["employee_id"], name: "index_rosters_on_employee_id", using: :btree
     t.index ["project_id"], name: "index_rosters_on_project_id", using: :btree
   end
 
@@ -171,10 +177,13 @@ ActiveRecord::Schema.define(version: 20170718152910) do
   end
 
   add_foreign_key "employee_notes", "employees"
+  add_foreign_key "employees", "rosters"
+  add_foreign_key "employees", "shifts"
   add_foreign_key "expense_codes", "employees"
   add_foreign_key "perdiems", "employees"
   add_foreign_key "posts", "users"
   add_foreign_key "project_types", "projects"
+  add_foreign_key "rosters", "employees"
   add_foreign_key "rosters", "projects"
   add_foreign_key "schedules", "projects"
   add_foreign_key "shifts", "schedules"

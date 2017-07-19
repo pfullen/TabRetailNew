@@ -1,11 +1,34 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :users
+    resources :posts
+    resources :admin_users
+    #resources :contacts
+    resources :employees
+    resources :employee_notes
+    resources :expense_codes
+    resources :perdiems
+   # resources :projects
+    resources :project_types
+   # resources :rosters
+   # resources :schedules
+    #resources :shifts
+    resources :travel_infos
+    resources :clients
+    resources :gc_contacts
+    resources :project_managers
+    resources :shift_managers
+    resources :site_managers
+
+    root to: "users#index"
+  end
+
   resources :travel_infos
   resources :shifts
   resources :schedules
   resources :rosters
   resources :project_types
   resources :perdiems
-  resources :employees
   resources :expense_codes
   resources :projects
   resources :contacts
