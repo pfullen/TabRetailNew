@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   namespace :admin do
     resources :users
     resources :posts
@@ -26,7 +27,11 @@ Rails.application.routes.draw do
   resources :travel_infos
   resources :shifts
   resources :schedules
-  resources :rosters
+  
+  resources :rosters do
+    resources :employee_lists
+  end
+
   resources :project_types
   resources :perdiems
   resources :expense_codes
@@ -36,5 +41,5 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root to: 'static#homepage'
+  root to: 'projects#index'
 end

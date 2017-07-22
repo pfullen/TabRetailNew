@@ -1,3 +1,7 @@
+
+@import "../library/variables";
+$output-bourbon-deprecation-warnings: false;
+
 fieldset {
   background-color: transparent;
   border: 0;
@@ -6,14 +10,14 @@ fieldset {
 }
 
 legend {
-  font-weight: $bold-font-weight;
+  font-weight: bold;
   margin: 0;
   padding: 0;
 }
 
 label {
   display: block;
-  font-weight: $bold-font-weight;
+  font-weight: bold;
   margin: 0;
 }
 
@@ -105,3 +109,6 @@ select {
     outline-offset: $focus-outline-offset;
   }
 }
+
+
+$bold-font-weight: 500;

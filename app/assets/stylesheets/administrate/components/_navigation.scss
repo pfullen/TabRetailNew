@@ -1,3 +1,7 @@
+$output-bourbon-deprecation-warnings: false;
+@import "../library/variables";
+
+
 $_navigation-link-padding: 0.6em;
 
 .navigation {

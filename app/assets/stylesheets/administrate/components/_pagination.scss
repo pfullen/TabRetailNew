@@ -1,3 +1,7 @@
+@import "../library/variables";
+$output-bourbon-deprecation-warnings: false;
+
+
 .pagination {
   margin-top: $base-spacing;
   padding-left: $base-spacing;

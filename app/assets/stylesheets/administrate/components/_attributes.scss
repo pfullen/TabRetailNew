@@ -1,3 +1,7 @@
+@import "../library/variables";
+@import "../library/data-label";
+$output-bourbon-deprecation-warnings: false;
+
 .attribute-label {
   @include data-label;
   clear: left;

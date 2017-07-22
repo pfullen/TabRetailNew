@@ -1,3 +1,7 @@
+$output-bourbon-deprecation-warnings: false;
+@import "../library/variables";
+
+
 $_search-icon-size: 1rem;
 
 .search {

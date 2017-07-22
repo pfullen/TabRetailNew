@@ -29,3 +29,13 @@
 
 @import "utilities/text-color";
 
+@import 'administrate/library/variables';
+
+legend {
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+
+$output-bourbon-deprecation-warnings: false;

@@ -1,3 +1,5 @@
+$output-bourbon-deprecation-warnings: false;
+
 // Typography
 $base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
   "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -61,3 +63,6 @@ $base-border: 1px solid $base-border-color !default;
 // Transitions
 $base-duration: 250ms !default;
 $base-timing: ease-in-out !default;
+ 
+$bold-font-weight: 300;
+

@@ -1,8 +1,15 @@
+
+$output-bourbon-deprecation-warnings: false !global;
+
 @mixin data-label {
   color: $hint-grey;
-  font-size: 0.8em;
+  font-size: 9px;
   font-weight: 400;
-  letter-spacing: 0.0357em;
+  letter-spacing: .3px;
   position: relative;
   text-transform: uppercase;
+
+    $output-bourbon-deprecation-warnings: false !global;
+      $depreciation-warnings:  $output-bourbon-deprecation-warnings;
+    $output-bourbon-deprecation-warnings: #depreciation-warnings !global;
 }
