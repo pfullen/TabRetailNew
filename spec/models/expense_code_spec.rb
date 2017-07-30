@@ -5,7 +5,7 @@ RSpec.describe ExpenseCode, type: :model do
  @expense_code = FactoryGirl.create(:expense_code)
   end
 
-  describe 'Creation' do
+  pending describe 'Creation' do
   	it 'can be created' do
   		expect(@expense_code).to be_valid
   	end

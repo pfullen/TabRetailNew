@@ -12,7 +12,19 @@
 //
 //= require jquery
 //= require bootstrap-sprockets
+//= require bootstrap-datepicker
 //= require gritter
 //= require jquery_ujs
+//= require cocoon
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function() {
+  $('.datepicker').datepicker({ format: 'yy/mm/dd' })
+  	
+});
+
+
+
+

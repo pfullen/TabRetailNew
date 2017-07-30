@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/thoughtbot/administrate.git
-  revision: a2a6931f73ce6be068a662c35e2f6708e71a7af9
+  revision: 8b51445b9251d9fb6bb3d1a6e72111d6b86eb0a4
   branch: master
   specs:
     administrate (0.8.1)
@@ -58,10 +58,15 @@ GEM
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     arel (7.1.4)
-    autoprefixer-rails (7.1.2.1)
+    autoprefixer-rails (7.1.2.3)
       execjs
     bcrypt (3.1.11)
     bindex (0.5.0)
+    bootstrap (4.0.0.alpha6)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.4.19)
+    bootstrap-datepicker-rails (1.6.4.1)
+      railties (>= 3.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -70,13 +75,14 @@ GEM
       thor (~> 0.19)
     builder (3.2.3)
     byebug (9.0.6)
-    capybara (2.14.0)
+    capybara (2.14.4)
       addressable
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    cocoon (1.2.10)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -114,6 +120,8 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (6.0.1)
+      railties (>= 3.2.16)
     kaminari (1.0.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.0.1)
@@ -138,7 +146,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.2.0)
-    minitest (5.10.2)
+    minitest (5.10.3)
     momentjs-rails (2.17.1)
       railties (>= 3.1)
     multi_json (1.12.1)
@@ -199,7 +207,11 @@ GEM
       rspec-mocks (~> 3.6.0)
       rspec-support (~> 3.6.0)
     rspec-support (3.6.0)
-    sass (3.4.25)
+    sass (3.5.1)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
       sass (~> 3.1)
@@ -207,6 +219,12 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
     selectize-rails (0.12.4)
+    simple_form (3.5.0)
+      actionpack (> 4, < 5.2)
+      activemodel (> 4, < 5.2)
+    slim (3.0.8)
+      temple (>= 0.7.6, < 0.9)
+      tilt (>= 1.3.3, < 2.1)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -219,9 +237,10 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    temple (0.8.0)
     thor (0.19.4)
     thread_safe (0.3.6)
-    tilt (2.0.7)
+    tilt (2.0.8)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
@@ -247,10 +266,13 @@ PLATFORMS
 
 DEPENDENCIES
   administrate!
+  bootstrap (~> 4.0.0.alpha6)
+  bootstrap-datepicker-rails
   bootstrap-sass (~> 3.3, >= 3.3.6)
   bourbon
   byebug
   capybara
+  cocoon
   coffee-rails (~> 4.2)
   database_cleaner
   devise (~> 4.2.0)
@@ -258,12 +280,15 @@ DEPENDENCIES
   gritter (~> 1.2.0)
   jbuilder (~> 2.5)
   jquery-rails
+  jquery-ui-rails
   listen (~> 3.0.5)
   pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.4)
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
+  simple_form
+  slim
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

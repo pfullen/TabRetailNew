@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :project do
-    company "MyString"
+    company "Test Company"
     project_type "MyString"
-    client "MyString"
-    store_num "MyString"
+    client "Walmart"
+    store_num "999"
     address "MyString"
     city "MyString"
     state "MyString"
@@ -12,7 +12,7 @@ FactoryGirl.define do
     status "MyString"
     billing "MyString"
     start_date "2017-07-18"
-    end_date "2017-07-18"
+    end_date "2017-08-20"
     duration 1
     num_of_employees 1
     num_of_shifts 1

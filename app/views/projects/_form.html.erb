@@ -1,0 +1,33 @@
+
+<%= simple_form_for @project, class: "form-horizontal" do |f| %>
+
+	<% if @project.errors.any? %>
+		<% @project.errors.full_messages.each do |error| %>
+			<%= js add_gritter(error, title: "Overtime App Notification", sticky: false) %>
+		<% end %>
+	<% end %>
+
+  
+  	<%= f.input :company, collection: ['Tab Retail', 'Ridge Line', 'Store Force' ] %>	
+  	   <%= f.input :project_type %>
+       <%= f.input :client %>
+       <%= f.input :store_num %>
+       <%= f.input :address %>
+       <%= f.input :city %>
+       <%= f.input :state %>
+       <%= f.input :invoice_to %>
+       <%= f.input :project_manager %>
+       <%= f.input :status %>
+       <%= f.input :billing %>
+       <%= f.label :start_date %>
+       <%= f.date_field :start_date , class: 'form-control datepicker', :date => {:provide => 'datepicker'} %> 
+      <%= f.label :end_date %>
+       <%= f.date_field   :end_date , class: 'form-control datepicker', :date => {:provide => 'datepicker'} %> 
+       <%= f.input :num_of_employees %>
+       <%= f.input :num_of_shifts%>
+       <%= f.button :submit %>
+
+   
+ <% end %>
+
+

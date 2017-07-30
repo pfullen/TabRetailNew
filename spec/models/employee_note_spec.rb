@@ -5,7 +5,7 @@ RSpec.describe EmployeeNote, type: :model do
   	@employee_note = FactoryGirl.create(:employee_note)
   end
 
-  describe 'Creation' do
+  pending describe 'Creation' do
   	it 'can be created' do
   		expect(@employee_note).to be_valid
   	end

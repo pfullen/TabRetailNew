@@ -57,7 +57,7 @@ textarea {
   border-radius: $base-border-radius;
   padding: 0.5em;
   transition: border-color $base-duration $base-timing;
-  width: 100%;
+  width: 20%;
 
   &:hover {
     border-color: mix($black, $base-border-color, 20%);
@@ -97,7 +97,7 @@ textarea {
 }
 
 select {
-  width: 100%;
+  width: 30%;
 }
 
 [type="checkbox"],
@@ -112,3 +112,4 @@ select {
 
 
 $bold-font-weight: 500;
+

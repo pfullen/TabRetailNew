@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721153021) do
+ActiveRecord::Schema.define(version: 20170727013640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,12 +31,14 @@ ActiveRecord::Schema.define(version: 20170721153021) do
 
   create_table "employee_lists", force: :cascade do |t|
     t.integer  "roster_id"
-    t.integer  "employee_id"
     t.string   "per_diem"
     t.string   "expense_code"
     t.string   "assigned_to_new_project"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.string   "full_name"
+    t.integer  "employee_id"
+    t.index ["employee_id"], name: "index_employee_lists_on_employee_id", using: :btree
     t.index ["roster_id"], name: "index_employee_lists_on_roster_id", using: :btree
   end
 
@@ -61,10 +63,12 @@ ActiveRecord::Schema.define(version: 20170721153021) do
     t.string   "perdiem"
     t.string   "company"
     t.string   "type"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "shift_id"
     t.integer  "roster_id"
+    t.integer  "employee_lists_id"
+    t.index ["employee_lists_id"], name: "index_employees_on_employee_lists_id", using: :btree
     t.index ["roster_id"], name: "index_employees_on_roster_id", using: :btree
     t.index ["shift_id"], name: "index_employees_on_shift_id", using: :btree
   end
@@ -123,15 +127,27 @@ ActiveRecord::Schema.define(version: 20170721153021) do
     t.integer  "num_of_shifts"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "site_manager"
+  end
+
+  create_table "roster_lists", force: :cascade do |t|
+    t.integer  "roster_id"
+    t.integer  "employee_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "perdiem"
+    t.string   "expense_code"
+    t.string   "shift_id"
+    t.string   "string"
+    t.index ["employee_id"], name: "index_roster_lists_on_employee_id", using: :btree
+    t.index ["roster_id"], name: "index_roster_lists_on_roster_id", using: :btree
   end
 
   create_table "rosters", force: :cascade do |t|
     t.integer  "project_id"
-    t.string   "employee_name"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "employee_id"
-    t.index ["employee_id"], name: "index_rosters_on_employee_id", using: :btree
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date     "week"
     t.index ["project_id"], name: "index_rosters_on_project_id", using: :btree
   end
 
@@ -187,15 +203,18 @@ ActiveRecord::Schema.define(version: 20170721153021) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "employee_lists", "employees"
   add_foreign_key "employee_lists", "rosters"
   add_foreign_key "employee_notes", "employees"
+  add_foreign_key "employees", "employee_lists", column: "employee_lists_id"
   add_foreign_key "employees", "rosters"
   add_foreign_key "employees", "shifts"
   add_foreign_key "expense_codes", "employees"
   add_foreign_key "perdiems", "employees"
   add_foreign_key "posts", "users"
   add_foreign_key "project_types", "projects"
-  add_foreign_key "rosters", "employees"
+  add_foreign_key "roster_lists", "employees"
+  add_foreign_key "roster_lists", "rosters"
   add_foreign_key "rosters", "projects"
   add_foreign_key "schedules", "projects"
   add_foreign_key "shifts", "schedules"

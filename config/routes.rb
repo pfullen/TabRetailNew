@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :roster_lists
   namespace :admin do
     resources :users
     resources :posts
@@ -28,14 +29,23 @@ Rails.application.routes.draw do
   resources :shifts
   resources :schedules
   
-  resources :rosters do
-    resources :employee_lists
-  end
+  
+  
+  
+
+  resources :employee_lists
+  
 
   resources :project_types
   resources :perdiems
   resources :expense_codes
-  resources :projects
+  resources :projects 
+    resources :rosters  do
+    resources :roster_lists 
+  end
+
+  
+   
   resources :contacts
   resources :posts
   devise_for :users
