@@ -3,10 +3,10 @@ class ProjectsController < ApplicationController
 before_action :set_project, only: [:show, :edit, :update, :destroy, :project_length_in_weeks]
 	
 def index
-	@projects = Project.all
-
-
+  @projects = Project.search(params[:term])
 end
+
+
 
 def new
 	@project = Project.new
@@ -51,6 +51,22 @@ def update
 end
 
 
+def new_store
+   @projects = Project.where(project_type: "New Store")
+end
+
+def els
+   @projects = Project.where(project_type: "SP_Project_ELS")
+end
+
+def fet
+   @projects = Project.where(project_type: "SP_Project_FET")
+end
+
+
+
+
+
 def project_length_in_weeks
   @sdate = @project.start_date.beginning_of_week.strftime('%W')
   @edate = @project.end_date.beginning_of_week.strftime('%W')
@@ -82,7 +98,7 @@ end
 def project_params
 	  	params.require(:project).permit(:company, :project_type, :client, :store_num,
 	  		:address, :city, :state, :invoice_to, :project_manager, :status, :billing,
-	  		 :start_date, :end_date, :num_of_employees, :num_of_shifts, :duration )
+	  		 :start_date, :end_date, :num_of_employees, :num_of_shifts, :duration, :term )
 end
 
 

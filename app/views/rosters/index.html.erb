@@ -1,6 +1,11 @@
 <div class="jumbotron">
 
-<h2>Rosters   <%= @id.inspect %> </h2>
+<h2>Rosters  </h2>
+
+<%= form_tag(rosters_path , method: :get) do %>
+  <%= date_field_tag :term, params[:term] %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
 
 <table class="table table-striped table-hover">
 	<thead>

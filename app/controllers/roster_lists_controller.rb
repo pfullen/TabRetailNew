@@ -18,13 +18,21 @@ class RosterListsController < ApplicationController
      @roster = Roster.find(params[:roster_id])
     @roster_list = RosterList.new
 
-   
-  
+     
   end
 
   # GET /roster_lists/1/edit
   def edit
   end
+
+  def per_diem_info
+
+     @roster_lists = RosterList.all.where.not(perdiem: "")
+   
+
+  end 
+ 
+
 
   # POST /roster_lists
   # POST /roster_lists.json
@@ -69,6 +77,11 @@ class RosterListsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

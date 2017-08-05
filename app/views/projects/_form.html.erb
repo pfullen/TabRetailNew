@@ -8,9 +8,13 @@
 	<% end %>
 
   
-  	<%= f.input :company, collection: ['Tab Retail', 'Ridge Line', 'Store Force' ] %>	
-  	   <%= f.input :project_type %>
-       <%= f.input :client %>
+  	<%= f.input :company, collection: ['Tab Retail', 'TRS', 'Ridge Line', 'Store Force'], as: :radio_buttons%>	
+  	   <%= f.input :project_type, collection: ["Newstore", "Remodel", "Resteel", 
+        "Special project", "Backroom_SP", "SP_Project_ELS", "SP_Project_FET", 
+        "Bike_Rack_SP", "Tire_Mezz"], prompt: "Select Project Type" , label: false%>
+
+       <%= f.input :client , collection: ["Walmart", "Sams", "Macys", "Publix", 
+        "Office Depot", "Burlington"], prompt: "Select Client", label: false %>
        <%= f.input :store_num %>
        <%= f.input :address %>
        <%= f.input :city %>

@@ -1,9 +1,12 @@
-<div class = "jumbotron">
+<div class = "panel panel-primary">
 
 
-<h3>View / Editing Roster </h3>
+<div class="panel-heading"> Add & Edit Roster --->  Week of: <%= @roster.week.strftime('%m/%d/%Y') %>  </div>
 
-<%= render 'form', roster: @roster %>
-
-<%= link_to 'Show', "" %> 
-</div>
+	<div class="panel-body">
+	<%= render 'form', roster: @roster %>
+	<br>
+ <%= link_to 'Back',  project_path(@roster.project_id)%>
+	
+	</div> 
+</div

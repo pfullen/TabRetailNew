@@ -1,7 +1,7 @@
 class RostersController < ApplicationController
 	before_action :set_rosters, only: [:show, :edit, :update, :destroy]
 def index
-@rosters = Roster.all
+@rosters = Roster.search2(params[:term])
 end
 
 
@@ -44,7 +44,7 @@ def update
 	      
     respond_to do |format|
       if @roster.update(roster_params)
-        format.html { redirect_to @roster, notice: 'Roster was successfully updated.' }
+        format.html { redirect_to project_path(@roster.project_id), notice: 'Roster was successfully updated.' }
         format.json { render :show, status: :ok, location: @roster}
       else
         format.html { render :edit }
@@ -70,7 +70,7 @@ end
 
 
 def roster_params
-	params.require(:roster).permit(:project_id, :week , 
+	params.require(:roster).permit(:project_id, :week , :term, 
 		roster_lists_attributes: [:id, :employee_id, :perdiem, :expense_code, :shift_id, :destroy ])
 end
 

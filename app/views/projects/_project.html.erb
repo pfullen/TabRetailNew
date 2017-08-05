@@ -1,44 +1,42 @@
 <tr>
+		
+		<td>
+			<%= project.project_name %> 
+		</td>
+		<td>
+			<%= project.city %>
+		</td>
+		<td>
+			<%= project.start_date %>
+		</td>
 	
-	<td>
-		<%= project.project_name %> 
-	</td>
-	<td>
-		<%= project.city %>
-	</td>
-	<td>
-		<%= project.start_date %>
-	</td>
+		<td>
+			<%= project.end_date %>
+		</td>
+	
+		<td>
+			<%= project.status %>
+		</td>
+	
+		<td>
+			<%= project.num_of_employees %>
+		</td>
+	
+		<td>
+			<%= project.invoice_to %>
+		</td>
+	
+		<td>
+			<%= link_to 'View', project_path(project)  %>    
+		</td>
+	
+		<td>
+			<%= link_to "<i class='glyphicon glyphicon-plus'> </i>".html_safe, 
+			edit_project_path(project)  %>    
+		</td>
+	
+		 <td>
+		 <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		</td>
+	</tr>
 
-	<td>
-		<%= project.end_date %>
-	</td>
-
-	<td>
-		<%= project.status %>
-	</td>
-
-	<td>
-		<%= project.num_of_employees %>
-	</td>
-
-	<td>
-		<%= project.invoice_to %>
-	</td>
-
-	<td>
-		<%= link_to 'View', project_path(project)  %>    
-	</td>
-
-	<td>
-		<%= link_to 'Edit', ''  %>    
-	</td>
-
-	 <td>
-	<%= link_to 'Delete', '' %>
-	</td>
-</tr>
-
-
-
-			

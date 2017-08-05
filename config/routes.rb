@@ -40,9 +40,9 @@ Rails.application.routes.draw do
   resources :perdiems
   resources :expense_codes
   resources :projects 
-    resources :rosters  do
+    resources :rosters 
     resources :roster_lists 
-  end
+
 
   
    
@@ -52,4 +52,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: 'projects#index'
+
+  get 'new_store', :to => 'projects#new_store'
+  get 'els', :to => 'projects#els'
+  get 'fet', :to => 'projects#fet'
+
+  get 'per_diem_info', :to => 'roster_lists#per_diem_info'
+
 end

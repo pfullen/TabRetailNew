@@ -1,15 +1,13 @@
 <%= simple_form_for @roster do |f| %>
  <div class "form-inputs">
- <%= f.input :project_id, class: 'main-form' %>
- <%= f.label :week %>
- <%= f.text_field  :week , class: 'main-form datepicker', placeholder: "Select a new week (Monday)" %>
- <p> Make sure to update the projects End date </p>
-   
+<p > <%= @roster.project.project_name  %>   </p>
+ 
    </div>
 
-    <table class = "table" >
+    <table class = "table table-striped table-hover" >
       <thead>
         <tr>
+          <th> </th>
           <th>Name </th>
           <th>Per Diem </th>
           <th>Expense Code </th>
@@ -17,26 +15,18 @@
         </tr>
       </thead>
 
-      <tbody class = "fields">
+      <tbody class = "employees">
            <%= f.fields_for :roster_lists do |builder| %>
-
-   	
-<tr>
-   		<td> <%= builder.input  :employee_id, label_method: :full_name , label: false%> </td>
-   		<td> <%= builder.input :perdiem , label: false%> </td>
-   		<td> <%= builder.input :expense_code, label: false %> </td>
-        <td> <%= builder.input :shift_id , label: false%> </td>
-   	</tr>
-
-    <% end %>
+           <%= render 'roster_list_fields', f: builder %>
+        <% end %>
 </tbody>
 </table>
 
 <div class = "form-action">
     <%= f.submit "Submit" %>
+    <%= link_to_add_association 'Add Employee', f, :roster_lists, class: 'btn btn-primary', data: {
+      association_insertion_node: '.employees', association_insertion_method: :append  } %>
   </div>
 <% end %>
 
 
-(:project_id, :week , 
-    roster_lists_attributes: [:id, :employee_id, :perdiem, :expense_code, :shift_id, :destroy ])

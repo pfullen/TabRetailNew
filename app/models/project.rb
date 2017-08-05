@@ -8,11 +8,17 @@ class Project < ApplicationRecord
 
 	# class to combine columns to create project name
 	def project_name
-		company + project_type + client + store_num
+		company + project_type.to_s + client + store_num
 	end
 
-	
 
+	def self.search(term)
+	  if term
+	    where('project_type LIKE ?', "%#{term}%")
+	  else
+	    all
+	  end
+	end
 
 end
 
