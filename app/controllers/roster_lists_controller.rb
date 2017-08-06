@@ -5,7 +5,7 @@ class RosterListsController < ApplicationController
   # GET /roster_lists.json
   def index
 
-    @roster_lists = RosterList.all
+    @roster_lists = RosterList.search(params[:term])
   end
 
   # GET /roster_lists/1
@@ -26,8 +26,8 @@ class RosterListsController < ApplicationController
   end
 
   def per_diem_info
-
-     @roster_lists = RosterList.all.where.not(perdiem: "")
+    @roster_lists = RosterList.joins(:roster).search(params[:term])
+    @roster_lists = @roster_lists.where.not(perdiem: "")
    
 
   end 
@@ -91,6 +91,6 @@ class RosterListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def roster_list_params
-      params.require(:roster_list).permit(:roster_id, :employee_id)
+      params.require(:roster_list).permit(:roster_id, :employee_id,)
     end
 end

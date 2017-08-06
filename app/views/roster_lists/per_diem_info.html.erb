@@ -5,6 +5,13 @@
 
 <h1>Per Diem Report </h1>
 
+<%= form_tag(per_diem_info_path , method: :get) do %>
+  <%= text_field_tag :term, params[:term] %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+
+
+
 <table class = "table table-striped table-hover">
   <thead>
     <tr>

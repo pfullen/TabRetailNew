@@ -1,7 +1,8 @@
 class RostersController < ApplicationController
 	before_action :set_rosters, only: [:show, :edit, :update, :destroy]
 def index
-@rosters = Roster.search2(params[:term])
+@rosters = Roster.search(params[:term])
+
 end
 
 

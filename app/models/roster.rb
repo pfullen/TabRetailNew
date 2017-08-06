@@ -7,14 +7,5 @@ accepts_nested_attributes_for :roster_lists ,
 
 
 
-def self.search2(term)
-	  if term
-	    where('project_id LIKE ?', "%#{term}%")
-	     where('project_type LIKE ?', "%#{term}%")
-	    
-	  else
-	    all
-	  end
-	end
 							  
 end

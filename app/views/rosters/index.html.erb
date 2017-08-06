@@ -24,8 +24,8 @@
 	<tbody>
 		  <% @rosters.each do |roster| %>
 		  <tr>
-        <td><%= roster.project_id %></td>
-           <td><%= roster.week %></td>
+        <td><%= roster.week%></td>
+           <td><%= roster.roster_list.employee.full_name %></td>
         <td><%= roster.id %></td>
         
              <td><%= link_to "<i class='glyphicon glyphicon-plus'> </i>".html_safe, 

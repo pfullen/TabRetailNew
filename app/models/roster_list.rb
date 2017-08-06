@@ -3,16 +3,16 @@ class RosterList < ApplicationRecord
   belongs_to :employee
 
 
+def self.search(term)
 
-def self.search2(term)
 	  if term
-	    where('roster.week LIKE ?', "%#{term}%")
-	    
-	    
+	    where("week = ?", "%#{term}%")
+	      	    
 	  else
 	    all
 	  end
 	end
+
 
 
 end

@@ -40,9 +40,9 @@ Rails.application.routes.draw do
   resources :perdiems
   resources :expense_codes
   resources :projects 
-    resources :rosters 
+    resources :rosters do
     resources :roster_lists 
-
+   end
 
   
    

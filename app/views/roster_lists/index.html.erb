@@ -7,8 +7,8 @@
 
   <div class="panel-body">
 
-<%= form_tag(roster_lists_path , method: :get) do %>
-  <%= text_field_tag :term, params[:term] %>
+<%= form_tag(rosters_path , method: :get) do %>
+  <%= date_field_tag :term, params[:term] %>
   <%= submit_tag 'Search', name: nil %>
 <% end %>
 
