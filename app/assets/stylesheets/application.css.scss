@@ -80,9 +80,8 @@ font-size: 12px;
 
 
 .panel-roster {
-	width: 80%;
+	
 }
-
 
 
 
@@ -110,12 +109,44 @@ font-size: 12px;
 	min-height: 350px;
 }
 
-.project {
-	margin: auto;
-	width: 50%;
-}
 
 .roster_info  {
 	display: none;
 
+}
+
+.shift-heading {
+	background-color: green;
+	color: white;
+}
+
+.shift-heading {
+	background-color: green;
+	
+	
+}
+
+.week-heading {
+background-color :darkorange;
+	
+}
+
+.shift-body {
+
+	border: solid 1px green;
+	
+}
+
+.project_panel {
+
+	width: 40%;
+}
+
+.shift-container {
+	width: 60%;
+	margin-right: 20px;
+}
+
+.panel-roster {
+	margin-right: 25px;
 }

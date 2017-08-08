@@ -4,30 +4,39 @@
   <% @project.rosters.each do |roster| %>
        <% @shift_count = 0 %>   
 
-         <%= @project.num_of_shifts.times do   %>
+<div class = "panel panel-primary  project-panel">
+
+
+           <div class="panel-heading week-heading">Week:  <%= roster.week %>  </div>
+           <div class="panel-body shift-info1">
+
+
+         <% @project.num_of_shifts.times do   %>
 
                 <% @shift_count = @shift_count + 1  %>
-<div class = "panel panel-primary form-panel project">
 
+      <div class="panel-heading shift-heading "> Shift: <%= @shift_count %> </div>
 
-           <div class="panel-heading">Week:  <%= roster.week %> Shift: <%= @shift_count %> </div>
+                <div class = "shift-body">
 
+                    <table class = "table table ">
+                        
+                          <%= render 'project_shift_details' %>
+                                                             
+                        
+                      </table>                  
+
+                   </div>
                 
-
-                  <div class="panel-body">
-
-                    <h1> Hello Hello Hello  </h1>
-                  </div>
-                </div>
-              </div>
               <% end %>  
-              <!-- End of hidden if for schedules -->   
-        
 
-  </div>
-  </div>
-  </div>
+              </div>
+              
+            </div>
+            <br>
+            <br>
+            
 
 
 
-<% end %> 
+<% end %>
