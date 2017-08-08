@@ -1,9 +1,12 @@
 class RostersController < ApplicationController
-	before_action :set_rosters, only: [:show, :edit, :update, :destroy]
+	before_action :set_rosters, only: [:show, :edit, :update, :destroy, :search]
 def index
-@rosters = Roster.search(params[:term])
+#@rosters = Roster.search(params[:term])
+@rosters = Roster.all
+#@rosters = @rosters.joins(:roster_lists).order(:shift_id)
 
 end
+
 
 
 def new
@@ -72,7 +75,7 @@ end
 
 def roster_params
 	params.require(:roster).permit(:project_id, :week , :term, 
-		roster_lists_attributes: [:id, :employee_id, :perdiem, :expense_code, :shift_id, :destroy ])
+		roster_lists_attributes: [:id, :employee_id, :perdiem, :expense_code, :shift_id, :destroy, :search ])
 end
 
 end

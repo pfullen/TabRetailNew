@@ -1,10 +1,10 @@
 class ProjectsController < ApplicationController
 
-before_action :set_project, only: [:show, :edit, :update, :destroy, :project_length_in_weeks]
+before_action :set_project, only: [:show, :edit, :update, :destroy, :project_length_in_weeks, :project_shifts]
 	
 def index
   @projects = Project.search(params[:term])
-end
+ end
 
 
 
@@ -45,6 +45,10 @@ end
 
 def show
 	@project = Project.find(params[:id])
+	@shift_count = 0 
+	@shift_count = @shift_count.to_i
+	  
+
 end
 
 def update
@@ -64,7 +68,9 @@ def fet
 end
 
 
+def project_shifts 
 
+end
 
 
 def project_length_in_weeks

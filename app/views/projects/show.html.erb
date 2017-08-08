@@ -57,50 +57,22 @@
 			 <div class = "panel-body ">
 		 	<table class = "table table-striped table-hover ">
 				<thead>
-				<tr>
 				
-				  <th colspan="3"></th>
-				</tr>
-				</thead>
+		
+					<%= render 'project_roster_info' %>
+                       
+                   
 
-				<tbody>
-				<% @project.rosters.each do |roster| %>
 
-				  <tr>
-			
-				    <td> <strong> Week of: <%=roster.week.strftime('%m/%d/%Y') %> </strong></td>
-				    
-				    <td> <%= link_to "<i class='glyphicon glyphicon-pencil'> </i>".html_safe, edit_roster_path(roster) %> </button></td>
-				    
-				    <tr>
-				    	<th>Name </th>
-				      <th> Phone </th>
-				      <th> Per Diem </th>
-				      <th> Expense Code </th>
-				      <th> Shift </th>
-				     </tr>
-				  		<% roster.roster_lists.each do |list| %>
-
-				        <tr>
-				        	
-				        	<td> <%= list.employee.full_name %> </td>
-				        	<td> <%= list.employee.phone %> </td>
-
-				        	<td> <%= list.perdiem %> </td>
-				        	<td> <%= list.expense_code%> </td>
-				        	<td> <%= list.shift_id%> </td>
-
-				        </tr>
                       
-
-                      <% end %>
-							
-
-				<% end %>
 
 
 				</tbody>
 				</table>
+
+				
+				
+
 
 			</div>
 			</div>

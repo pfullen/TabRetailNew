@@ -59,4 +59,6 @@ Rails.application.routes.draw do
 
   get 'per_diem_info', :to => 'roster_lists#per_diem_info'
 
+  get 'project_shifts', :to => 'projects#project_shifts'
+
 end

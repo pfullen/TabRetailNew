@@ -62,6 +62,7 @@ gem 'cocoon'
 gem 'slim'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem  'faker'
 #gem 'pry-rails', :group=> :development
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'bootstrap', '~> 4.0.0.alpha6'

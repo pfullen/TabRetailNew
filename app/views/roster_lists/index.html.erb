@@ -25,6 +25,7 @@
     <tr>
       <th>Week </th>
       <th>Employee</th>
+      <th> Phone </th>
           <th>Per Diem</th>
               <th>Notes</th>
       <th colspan="3"></th>
@@ -36,7 +37,9 @@
       <tr>
         <td><%= roster_list.roster.week %></td>
         <td><%= roster_list.employee.full_name %></td>
+               <td><%= roster_list.employee.phone %></td>
         <td> <%= roster_list.perdiem %> </td>
+        <td> Notes to be added  </td>
         <td> </td>
         <td><%= link_to 'Show', roster_list %></td>
         <td><%= link_to 'Edit', edit_roster_list_path(roster_list) %></td>

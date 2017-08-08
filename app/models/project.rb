@@ -4,6 +4,7 @@ class Project < ApplicationRecord
 	has_many :rosters, inverse_of: :project
 	has_many :travel_infos
 	has_many :schedules
+	has_many :states
 	
 
 	# class to combine columns to create project name
@@ -15,6 +16,7 @@ class Project < ApplicationRecord
 	def self.search(term)
 	  if term
 	    where('project_type LIKE ?', "%#{term}%")
+	    
 	  else
 	    all
 	  end
