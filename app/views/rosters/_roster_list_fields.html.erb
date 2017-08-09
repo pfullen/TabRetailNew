@@ -6,5 +6,5 @@
    		<td> <%= f.association :employee, label_method: :full_name , label: false%> </td>
    		<td> <%= f.input :perdiem , label: false%> </td>
    		<td> <%= f.input :expense_code, label: false %> </td>
-        <td> <%= f.input :shift_id , label: false%> </td>
+        <td> <%= f.input :shift_id , label: false , input_html:{min: '1', step: 'any'}%> </td>
    	</tr>

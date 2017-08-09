@@ -1,3 +1,5 @@
+  
+<table class ="table-striped table-hover roster-info-table">
   <thead>
 <tr>
 				
@@ -7,30 +9,35 @@
 				</tr>
 				</thead>
 
-				<tbody>
+				<tbody class="roster">
 				<% @project.rosters.each do |roster| %>
 
-				  <tr>
-			
-				    <td> <strong> Week of: <%=roster.week.strftime('%m/%d/%Y') %> </strong></td>
+				  <tr id="roster-header">
+			       
+             
+				    <td > <strong> Week of: <%=roster.week.strftime('%m/%d/%Y') %> </strong></td>
 				    
-				    <td> <%= link_to "<i class='glyphicon glyphicon-pencil'> </i>".html_safe, edit_roster_path(roster) %> </button></td>
-
+				    <td> <%= link_to "<i class='glyphicon glyphicon-pencil' > </i>".html_safe, edit_roster_path(roster) %> </td>
+            <td> </td>
+  <td> </td>
+    <td> </td>
+          </tr>
   
 
 				    
-			    
+			    <thead class = "roster-detail-info">
 
 
 				    <tr>
 				    	<th>Name </th>
 				      <th> Phone </th>
 				      <th> Per Diem </th>
-				      <th> Expense Code </th>
+				      <th> Exp Code </th>
 				      <th> Shift </th>
 				     </tr>
+           </thead>
 				  		<% roster.roster_lists.each do |list| %>
-
+              <tbody class = "roster-detail-info">
 				        <tr>
 				        	
 				        	<td> <%= list.employee.full_name %> </td>
@@ -43,10 +50,10 @@
 				        </tr>
 				       
 
-
+                <tbody>
 							
 				        <% end %>
 				      
 
 				        <% end %> 
-				    </tbody>
+				    </table>
