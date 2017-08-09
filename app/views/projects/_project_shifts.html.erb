@@ -7,13 +7,16 @@
 <div class = "panel panel-primary  project-panel">
 
 
-           <div class="panel-heading week-heading">Week:  <%= roster.week %>  </div>
+           <div class="panel-heading week-heading">Week:  <%= roster.week.strftime('%m/%d/%y') %>  </div>
            <div class="panel-body shift-info1">
 
 
          <% @project.num_of_shifts.times do   %>
 
                 <% @shift_count = @shift_count + 1  %>
+              
+
+              
 
       <div class="panel-heading shift-heading "> Shift: <%= @shift_count %> </div>
 
@@ -21,7 +24,34 @@
 
                     <table class = "table table ">
                         
-                          <%= render 'project_shift_details' %>
+                         
+  <thead>
+      <tr>
+        <th>Name </th>
+        <th> Phone </th>
+       
+       </tr>
+ </thead>
+
+ <tbody>
+      <% # roster.roster_lists.each do |list| %>
+      <% roster.roster_lists.each do |list|     %>
+
+
+      <%  if list.shift_id == @shift_count %>
+            <tr>
+                  
+              <td> <%= list.employee.full_name %> </td>
+              <td> <%= list.employee.phone %> </td>
+
+            
+
+            </tr>
+            <% end %>
+          
+    <% end %>
+                         
+   </tbody>
                                                              
                         
                       </table>                  
@@ -29,7 +59,7 @@
                    </div>
                 
               <% end %>  
-
+           
               </div>
               
             </div>

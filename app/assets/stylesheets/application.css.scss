@@ -71,7 +71,7 @@ font-size: 12px;
 
 
 
-.form-panel  {
+.form-panel.project {
 	margin-top: 10px;
 	width: 40%;
 	margin: 0 auto;
@@ -80,6 +80,7 @@ font-size: 12px;
 
 
 .panel-roster {
+width: 80%;
 	
 }
 
@@ -139,7 +140,8 @@ background-color :darkorange;
 
 .project_panel {
 
-	width: 40%;
+	width: 30%;
+	marging-right: 50px;
 }
 
 .shift-container {
@@ -149,4 +151,10 @@ background-color :darkorange;
 
 .panel-roster {
 	margin-right: 25px;
+}
+
+
+.panel.panel-primary.project-panel {
+	
+	margin-right: 100px;
 }

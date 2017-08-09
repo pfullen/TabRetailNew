@@ -103,7 +103,7 @@ end
 
 def project_params
 	  	params.require(:project).permit(:company, :project_type, :client, :store_num,
-	  		:address, :city, :state, :invoice_to, :project_manager, :status, :billing,
+	  		:address, :city, :state, :invoice_to, :project_manager, :site_manager, :status, :billing,
 	  		 :start_date, :end_date, :num_of_employees, :num_of_shifts, :duration, :term )
 end
 

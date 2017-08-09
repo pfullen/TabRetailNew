@@ -21,14 +21,15 @@
        <%= f.association :states,  label_method: :state_name, prompt: "Select State" %>
        <%= f.input :invoice_to %>
        <%= f.input :project_manager %>
+        <%= f.input :site_manager %>
        <%= f.input :status , collection: ["Pending", "Open", "Closed"], prompt: "Select Status"%>
        <%= f.input :billing %>
        <%= f.label :start_date %>
        <%= f.date_field :start_date , class: 'form-control datepicker',:date => {:provide => 'datepicker'}, prompt: "YY/MM/DD" %> 
       <%= f.label :end_date %>
        <%= f.date_field   :end_date , class: 'form-control datepicker',:date => {:provide => 'datepicker'}, prompt: "YY/MM/DD" %> 
-       <%= f.input :num_of_employees %>
-       <%= f.input :num_of_shifts%>
+       <%= f.input :num_of_employees, input_html: {min: '1', step: 'any'} %>
+       <%= f.input :num_of_shifts , input_html: {min: '1', step: 'any'}%>
        <%= f.button :submit %>
 
    
