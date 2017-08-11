@@ -21,13 +21,13 @@
 
 
 $(document).ready(function() {
-  //* $('.datepicker').datepicker({ format: 'yy/mm/dd' }) ;
+  
   	
 
 
   $(".show-hide").click(function() {
-  	$(".roster_info, .shift-info").toggle();
-  }); 	
+  	$(".roster_info, .shift-containers.shift-info").toggle();
+  }) 	
 
-  
+   $('.datepicker').datepicker({ format: 'yy/mm/dd' });
 });

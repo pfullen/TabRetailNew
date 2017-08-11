@@ -27,7 +27,8 @@
 		</td>
 	
 		<td>
-			<%= link_to 'View', project_path(project)  %>    
+			<%= link_to  "<i class='glyphicon glyphicon-eye-open'> </i>".html_safe, 
+			 project_path(project)  %>    
 		</td>
 	
 		<td>
@@ -35,8 +36,7 @@
 			edit_project_path(project)  %>    
 		</td>
 	
-		 <td>
-		 <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		 <td><%= link_to  "<i class='glyphicon glyphicon-trash' > </i>".html_safe, project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		</td>
 	</tr>
 

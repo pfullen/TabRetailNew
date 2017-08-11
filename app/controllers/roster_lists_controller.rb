@@ -91,6 +91,7 @@ class RosterListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def roster_list_params
-      params.require(:roster_list).permit(:roster_id, :employee_id,)
+      params.require(:roster_list).permit(:roster_id, :employee_id, :perdiem, :expense_code, :shift_id, :destroy)
     end
 end
+

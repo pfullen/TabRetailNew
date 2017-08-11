@@ -50,6 +50,18 @@ end
 
 def copy_roster_list
 
+	# @check_for_nil = @roster.roster_lists.all.inspect  
+	# @next_roster_id  = @roster.roster_lists.first.roster_id + 1 
+	# @roster_lists = RosterList.where(:roster_id => @next_roster_id) 
+    @roster.roster_lists.each do |roster_list| 
+       roster_list.roster_id = roster_list.roster_id + 1         
+         @roster_list = RosterList.create(roster_list.attributes.except("id"))
+  		end
+  # 		if @roster_list.save
+			redirect_to root_path , notice: 'Your new roster was created successfully'
+	#	else
+	#		
+	#	end
 end  
 
 def update
@@ -85,5 +97,10 @@ def roster_params
 	params.require(:roster).permit(:project_id, :week , :term, 
 		roster_lists_attributes: [:id, :employee_id, :perdiem, :copy_roster_list, :expense_code, :shift_id, :destroy, :search ])
 end
+
+def roster_list_params
+      params.require(:roster_list).permit(:roster_id, :employee_id, :perdiem, :expense_code, :shift_id, :destroy)
+    end
+
 
 end
