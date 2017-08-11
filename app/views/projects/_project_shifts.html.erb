@@ -18,7 +18,28 @@
 
               
 
-      <div class="panel-heading shift-heading "> Shift: <%= @shift_count %> </div>
+      <div class="panel-heading shift-heading "> <h4> Shift: <%= @shift_count %> </h4> 
+      <table class ="table  " >
+
+<tr>
+      <thead>
+       <th>   Days </th>
+       
+        <th>  Hours </th>
+        
+        <th> # of People </th>
+      </thead>
+    </tr>     
+
+      <tbody class = "shift-info-data" >
+        <tr >
+            <td> Mon - Friday  </td>
+            <td> 7am - 5pm  </td>
+            <td> 5 </td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
 
                 <div class = "shift-body">
 
@@ -29,6 +50,7 @@
       <tr>
         <th>Name </th>
         <th> Phone </th>
+        <th>  </th>
        
        </tr>
  </thead>
@@ -43,7 +65,7 @@
                   
               <td> <%= list.employee.full_name %> </td>
               <td> <%= list.employee.phone %> </td>
-
+              <td> <%= list.expense_code %>  </td>
             
 
             </tr>

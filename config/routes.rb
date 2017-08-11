@@ -61,4 +61,8 @@ Rails.application.routes.draw do
 
   get 'project_shifts', :to => 'projects#project_shifts'
 
+
+  resources  'copy_roster_list', :to => 'rosters#copy_roster_list'
+ 
+
 end

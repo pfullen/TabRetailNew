@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170809173645) do
+ActiveRecord::Schema.define(version: 20170809221418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -159,6 +159,18 @@ ActiveRecord::Schema.define(version: 20170809173645) do
     t.index ["project_id"], name: "index_schedules_on_project_id", using: :btree
   end
 
+  create_table "shift_infos", force: :cascade do |t|
+    t.integer  "shift_id"
+    t.string   "shift_days"
+    t.time     "shift_start_time"
+    t.string   "shift_end_time"
+    t.text     "notes"
+    t.integer  "roster_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["roster_id"], name: "index_shift_infos_on_roster_id", using: :btree
+  end
+
   create_table "shifts", force: :cascade do |t|
     t.integer  "schedule_id"
     t.integer  "employee_id"
@@ -226,6 +238,7 @@ ActiveRecord::Schema.define(version: 20170809173645) do
   add_foreign_key "roster_lists", "rosters"
   add_foreign_key "rosters", "projects"
   add_foreign_key "schedules", "projects"
+  add_foreign_key "shift_infos", "rosters"
   add_foreign_key "shifts", "schedules"
   add_foreign_key "states", "projects"
   add_foreign_key "travel_infos", "projects"

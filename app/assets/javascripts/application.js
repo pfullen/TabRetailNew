@@ -21,7 +21,7 @@
 
 
 $(document).ready(function() {
- /* $('.datepicker').datepicker({ format: 'yy/mm/dd' }) */
+  //* $('.datepicker').datepicker({ format: 'yy/mm/dd' }) ;
   	
 
 

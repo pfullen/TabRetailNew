@@ -1,5 +1,7 @@
 class RostersController < ApplicationController
-	before_action :set_rosters, only: [:show, :edit, :update, :destroy, :search]
+	before_action :set_rosters, only: [:show, :edit, :update,
+	 :destroy, :search, :copy_roster_list]
+	 
 def index
 #@rosters = Roster.search(params[:term])
 @rosters = Roster.all
@@ -38,11 +40,17 @@ def new
 	end
 
 def edit
+	@test = params
  # @project = Project.find(params[:id])
 	end
 
 def show
 end
+
+
+def copy_roster_list
+
+end  
 
 def update
 	      
@@ -75,7 +83,7 @@ end
 
 def roster_params
 	params.require(:roster).permit(:project_id, :week , :term, 
-		roster_lists_attributes: [:id, :employee_id, :perdiem, :expense_code, :shift_id, :destroy, :search ])
+		roster_lists_attributes: [:id, :employee_id, :perdiem, :copy_roster_list, :expense_code, :shift_id, :destroy, :search ])
 end
 
 end

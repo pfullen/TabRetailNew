@@ -3,6 +3,8 @@
 
 <div class="panel-heading"> Add & Edit Roster --->  Week of: <%= @roster.week.strftime('%m/%d/%Y') %>  </div>
 
+<%= @test.inspect  %> 
+
 	<div class="panel-body">
 	<%= render 'form', roster: @roster %>
 	<br>

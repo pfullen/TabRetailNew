@@ -1,5 +1,5 @@
 class RosterListsController < ApplicationController
-  before_action :set_roster_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_roster_list, only: [:show, :edit, :update, :destroy, :copy_to_next_week]
 
   # GET /roster_lists
   # GET /roster_lists.json
@@ -79,7 +79,7 @@ class RosterListsController < ApplicationController
   end
 
 
-  
+
 
 
 
