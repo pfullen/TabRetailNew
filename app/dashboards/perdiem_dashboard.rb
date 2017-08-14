@@ -8,8 +8,9 @@ class PerdiemDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    employee: Field::BelongsTo,
+    employee_list: Field::BelongsTo,
     id: Field::Number,
+    employee_id: Field::Number,
     perdiem_name: Field::String,
     amount: Field::Number,
     created_at: Field::DateTime,
@@ -22,15 +23,18 @@ class PerdiemDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    
+    :employee_list,
+    :id,
+    :employee_id,
     :perdiem_name,
-    :amount,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    
+    :employee_list,
+    :id,
+    :employee_id,
     :perdiem_name,
     :amount,
     :created_at,
@@ -41,7 +45,8 @@ class PerdiemDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-  
+    :employee_list,
+    :employee_id,
     :perdiem_name,
     :amount,
   ].freeze
@@ -49,7 +54,7 @@ class PerdiemDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how perdiems are displayed
   # across all pages of the admin dashboard.
   #
- # def display_resource(perdiem)
- #   perdiem.name
- #  end
+  # def display_resource(perdiem)
+  #   "Perdiem ##{perdiem.id}"
+  # end
 end

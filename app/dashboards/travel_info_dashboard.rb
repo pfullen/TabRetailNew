@@ -8,11 +8,11 @@ class TravelInfoDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    project: Field::BelongsTo,
+    project: Field::BelongsTo.with_options(searchable: true)
     id: Field::Number,
     hotel_name: Field::String,
     address: Field::String,
-    city: Field::String,
+    city: Field::String.with_options(searchable: true)
     zip: Field::String,
     state: Field::String,
     phone: Field::String,
@@ -27,9 +27,9 @@ class TravelInfoDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :project,
-    :id,
     :hotel_name,
     :address,
+    :city
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -63,7 +63,7 @@ class TravelInfoDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how travel infos are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(travel_info)
-  #   "TravelInfo ##{travel_info.id}"
-  # end
+  #def display_resource(travel_info)
+   # "TravelInfo ##{travel_info.id}"
+  #end
 end

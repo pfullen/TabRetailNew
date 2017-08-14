@@ -1,0 +1,29 @@
+a.navigation__link:not(:last-of-type) {
+		margin-bottom: 0;
+	text-decoration:	none;
+	border-radius: 5px;
+	border: solid gray 1px;
+}
+
+
+a.navigation__link. navigation__link--inactive {
+	border: solid gray 1px;
+	border-radius: 5px;
+	text-decoration: none;
+	}
+
+
+.navigation__link {
+	text-decoration: none;
+	background-color: rgba(25, 118, 210);
+	color: white;
+	margin-bottom: 0;
+	border: solid gray 1px;
+	border-radius: 5px;
+}
+
+a {
+
+
+
+}

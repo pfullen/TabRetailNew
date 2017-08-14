@@ -10,7 +10,7 @@ class GcContactDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     first_name: Field::String,
-    last_name: Field::String,
+    last_name: Field::String.with_options(searchable: true),
     address: Field::String,
     city: Field::String,
     zip: Field::String,
@@ -28,11 +28,10 @@ class GcContactDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    
-     :last_name,
+    :id,
     :first_name,
-       :phone,
-    :email
+    :last_name,
+    :address,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

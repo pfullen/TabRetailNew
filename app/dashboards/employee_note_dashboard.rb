@@ -8,7 +8,7 @@ class EmployeeNoteDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    employee: Field::BelongsTo,
+    employee: Field::BelongsTo.with_options(searchable: true),
     id: Field::Number,
     note: Field::Text,
     created_at: Field::DateTime,
@@ -22,7 +22,7 @@ class EmployeeNoteDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :employee,
- 
+  
     :note,
     :created_at,
   ].freeze
@@ -31,7 +31,7 @@ class EmployeeNoteDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :employee,
-  
+
     :note,
     :created_at,
     :updated_at,

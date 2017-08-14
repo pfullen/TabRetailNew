@@ -15,7 +15,7 @@ class Project < ApplicationRecord
 
 	def self.search(term)
 	  if term
-	    where('project_type LIKE ?', "%#{term}%")
+	    where('project_type LIKE ? OR client LIKE ?', "%#{term}%", "%#{term}%" )
 	    
 	  else
 	    all

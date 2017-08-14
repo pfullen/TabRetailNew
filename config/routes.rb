@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   
   resources :roster_lists
   namespace :admin do
-    resources :users
-    resources :posts
-    resources :admin_users
+   #resources :users
+    #resources :posts
+   # resources :admin_users
     #resources :contacts
     resources :employees
     resources :employee_notes
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resources :shift_managers
     resources :site_managers
 
-    root to: "users#index"
+    root to: "clients#index"  
   end
 
   resources :travel_infos

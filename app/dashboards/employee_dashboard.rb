@@ -10,10 +10,9 @@ class EmployeeDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     perdiems: Field::HasMany,
     expense_codes: Field::HasMany,
-    roster: Field::BelongsTo,
-    shifts: Field::BelongsTo.with_options(class_name: "Shifts"),
+    roster_lists: Field::HasMany,
     id: Field::Number,
-    first_name: Field::String,
+    first_name: Field::String.with_options(searchable: true),
     last_name: Field::String,
     address: Field::String,
     city: Field::String,
@@ -28,7 +27,8 @@ class EmployeeDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     shift_id: Field::Number,
-    full_name: Field::String,
+    roster_id: Field::Number,
+    employee_lists_id: Field::Number,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -37,31 +37,18 @@ class EmployeeDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    
-    :full_name,
-    :phone,
-    :email,
-         
+    :last_name,
+    :first_name, 
+    :phone
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    
-  :full_name,
-     :email,
-    :phone,
-    :expense_code,
-    :perdiem,
-    
-    
-  ].freeze
-
-  # FORM_ATTRIBUTES
-  # an array of attributes that will be displayed
-  # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    
+    :perdiems,
+    :expense_codes,
+    :roster_lists,
+    :id,
     :first_name,
     :last_name,
     :address,
@@ -73,6 +60,31 @@ class EmployeeDashboard < Administrate::BaseDashboard
     :expense_code,
     :perdiem,
     :company,
+    :type,
+    :created_at,
+    :updated_at,
+    :shift_id,
+    :roster_id,
+    :employee_lists_id,
+  ].freeze
+
+  # FORM_ATTRIBUTES
+  # an array of attributes that will be displayed
+  # on the model's form (`new` and `edit`) pages.
+  FORM_ATTRIBUTES = [
+    
+   
+    :first_name,
+    :last_name,
+    :address,
+    :city,
+    :state,
+    :zip,
+    :email,
+    :phone,
+   
+  
+   
    
   ].freeze
 
@@ -82,10 +94,4 @@ class EmployeeDashboard < Administrate::BaseDashboard
   # def display_resource(employee)
   #   "Employee ##{employee.id}"
   # end
-
- def full_name
-    last_name.upcase + "," + first_name.upcase
-  end
-
-
 end
