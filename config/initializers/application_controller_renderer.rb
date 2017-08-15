@@ -5,4 +5,4 @@
 #   https: false
 # )
 
-Administrate::Engine.add_stylesheet('administrate.css.scss')
+#Administrate::Engine.add_stylesheet('administrate.css.scss')

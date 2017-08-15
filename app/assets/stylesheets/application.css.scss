@@ -1,14 +1,10 @@
+/*
+*=require_tree.
+*=require_self
+*/
 
 
- $output-bourbon-depreciation-warnings: false;
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
-@import "bootstrap-datepicker";
-@import "gritter";
-@import "bourbon";
-@import "administrate/application.scss";
 
 
 
@@ -19,18 +15,6 @@
 }
 
 
-.navigation__link {
-	
- text-decoration: none;
-
-
-}
-
- .navigation__link:hover {
-
- background-color: #eceef1;
-
- }
 
 
 
@@ -212,19 +196,17 @@ padding-bottom: 0;
 
 }
 
-.navigation__link {
-	
-text-decoration:  none;
-
-}
 
 
-.project-table {
-	font-size: 12px;
-}
+
 
 
 #term {
 	
 	width: 30%;
+}
+
+.navigation__link {
+	
+
 }
