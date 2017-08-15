@@ -1,5 +1,5 @@
 
-#	@user = User.create(email: "tes1@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Jon", last_name: "Snow")
+	@user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Jon", last_name: "Snow")
 	
 #100.times do |post|
 #	Post.create!(date: Date.today, rationale: "#{post} rationale content", user_id: @user.id)
@@ -8,7 +8,7 @@
 
 #puts "100 posts have been created"
 
-=begin
+
 states = State.create!([
   { state_name: 'Alaska', state_code: 'AK' },
   { state_name: 'Alabama', state_code: 'AL' },
@@ -65,7 +65,6 @@ states = State.create!([
 ])
 
 
-=end
 
 
 99.times do |n|
@@ -81,3 +80,152 @@ Employee.create!(first_name: first_name,
                   phone: phone)
 end
 
+
+
+25.times do |n|
+
+store_num       = Faker::Number.number(5)
+address         = Faker::Address.street_address
+city            = Faker::Address.city
+state           = Faker::Address.state
+project_manager = Faker::Name.name  
+site_manager    = Faker::Name.name  
+invoice_to      = Faker::Name.name  
+
+
+  @project = Project.create(company: "Tab Retail",
+                project_type: "EFT",
+                client:   "Walmart",
+                store_num:    store_num,
+                address:    address,
+                city:      city,
+                state:      state,
+                invoice_to:    invoice_to,
+                project_manager:    project_manager,
+                status:   "Open",
+                start_date: "17/08/15"   ,
+                end_date:   "17/09/15"  ,  
+                num_of_employees:   5, 
+                num_of_shifts:    3,
+                site_manager:    site_manager
+              )
+
+  # Create Rosters
+  @sdate = @project.start_date.beginning_of_week.strftime('%W')
+  @edate = @project.end_date.beginning_of_week.strftime('%W')
+  @sdate = @sdate.to_i
+  @edate = @edate.to_i
+  @duration = (@edate - @sdate)
+  @project.duration = @duration
+  @date = @project.start_date.beginning_of_week
+  @project.save
+  
+    @project.duration.times do 
+      @roster = @project.rosters.create(week: @date)   
+      @date = @date + 7
+    end 
+
+
+
+
+  @project =  Project.create(company: "TRS",
+                project_type: "ELS",
+                client:   "Walmart",
+                store_num:    store_num,
+                address:    address,
+                city:      city,
+                state:      state,
+                invoice_to:    invoice_to,
+                project_manager:    project_manager,
+                status:   "Open",
+                start_date: "17/08/15"   ,
+                end_date:   "17/09/15"  ,  
+                num_of_employees:   5, 
+                num_of_shifts:    3,
+                site_manager:    site_manager
+              )
+
+   # Create Rosters
+  @sdate = @project.start_date.beginning_of_week.strftime('%W')
+  @edate = @project.end_date.beginning_of_week.strftime('%W')
+  @sdate = @sdate.to_i
+  @edate = @edate.to_i
+  @duration = (@edate - @sdate)
+  @project.duration = @duration
+  @date = @project.start_date.beginning_of_week
+  @project.save
+  
+    @project.duration.times do 
+      @roster = @project.rosters.create(week: @date)   
+      @date = @date + 7
+    end 
+
+
+   @project = Project.create(company: "Ridgeline",
+                project_type: "EFT",
+                client:   "Office Depot",
+                store_num:    store_num,
+                address:    address,
+                city:      city,
+                state:      state,
+                invoice_to:    invoice_to,
+                project_manager:    project_manager,
+                status:   "Open",
+                start_date: "17/08/15"   ,
+                end_date:   "17/09/15"  ,  
+                num_of_employees:   5, 
+                num_of_shifts:    3,
+                site_manager:    site_manager
+              )
+
+ # Create Rosters
+ @sdate = @project.start_date.beginning_of_week.strftime('%W')
+  @edate = @project.end_date.beginning_of_week.strftime('%W')
+  @sdate = @sdate.to_i
+  @edate = @edate.to_i
+  @duration = (@edate - @sdate)
+  @project.duration = @duration
+  @date = @project.start_date.beginning_of_week
+  @project.save
+  
+    @project.duration.times do 
+      @roster = @project.rosters.create(week: @date)   
+      @date = @date + 7
+    end 
+
+
+
+   @project = Project.create(company: "Tab Retail",
+                project_type: "New Store",
+                client:   "Publix",
+                store_num:    store_num,
+                address:    address,
+                city:      city,
+                state:      state,
+                invoice_to:    invoice_to,
+                project_manager:    project_manager,
+                status:   "Open",
+                start_date: "17/08/15"   ,
+                end_date:   "17/09/15"  ,  
+                num_of_employees:   5, 
+                num_of_shifts:    3,
+                site_manager:    site_manager
+              )
+
+    # Create Rosters
+  @sdate = @project.start_date.beginning_of_week.strftime('%W')
+  @edate = @project.end_date.beginning_of_week.strftime('%W')
+  @sdate = @sdate.to_i
+  @edate = @edate.to_i
+  @duration = (@edate - @sdate)
+  @project.duration = @duration
+  @date = @project.start_date.beginning_of_week
+  @project.save
+  
+    @project.duration.times do 
+      @roster = @project.rosters.create(week: @date)   
+      @date = @date + 7
+    end 
+
+
+ end 
