@@ -1,1 +1,1 @@
-#Administrate::Engine.add_stylesheet('administrate.css')
+Administrate::Engine.add_stylesheet('administrate.css')

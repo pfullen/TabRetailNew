@@ -11,23 +11,24 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery_ujs
 //= require bootstrap-sprockets
+//= requrie bootstrap.jsS
 //= require bootstrap-datepicker
 //= require gritter
-//= require jquery_ujs
 //= require cocoon
 //= require turbolinks
 //= require_tree .
 
 
 $(document).ready(function() {
-  
-  	
-
+    	
+  $('.datepicker').datepicker({ format: 'yy/mm/dd' });
 
   $(".show-hide").click(function() {
-  	$(".roster_info, .shift-containers.shift-info").toggle();
+  	$(".roster_info, .shift-containers.shift-info").toggle()
   }) 	
-
-   $('.datepicker').datepicker({ format: 'yy/mm/dd' });
+  
 });
+
+  

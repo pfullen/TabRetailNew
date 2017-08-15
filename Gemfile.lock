@@ -277,7 +277,7 @@ PLATFORMS
 DEPENDENCIES
   administrate!
   bootstrap (~> 4.0.0.alpha)
-  bootstrap-datepicker-rails
+  bootstrap-datepicker-rails (~> 1.6.4.1)
   bootstrap-sass (~> 3.3, >= 3.3.7)
   bourbon
   byebug

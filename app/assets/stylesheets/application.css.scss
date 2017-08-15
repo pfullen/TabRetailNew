@@ -9,11 +9,11 @@
 
 @import "bootstrap";
 
-@import "bootstrap-datepicker";
+
 @import "gritter";
 @import "bourbon";
 
-
+@import "bootstrap-datepicker";
 
 .custom-nav {
 	
@@ -215,5 +215,35 @@ padding-bottom: 0;
 
 .navigation__link {
 	
+
+}
+
+td.project-table {
+
+font-size: 10px;
+	
+
+}
+
+
+th.datepicker-switch
+{
+	
+	background-color:  #1975ED;
+	color: white;
+
+}
+
+th.datepicker-switch:hover  {
+	background-color:  #1975ED;
+	color: white;
+
+}
+
+th.datepicker {
+	
+background-color:  #1975ED;
+	color: white;
+
 
 }
