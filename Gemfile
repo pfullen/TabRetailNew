@@ -65,7 +65,7 @@ gem 'jquery-ui-rails'
 gem  'faker'
 #gem 'pry-rails', :group=> :development
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
-gem 'bootstrap', '~>  4.0.0.alpha'
+gem 'bootstrap'   , '~>  4.0.0.beta'
 
 gem 'bootstrap-datepicker-rails', '~>1.6.4.1'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

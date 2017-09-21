@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= requrie bootstrap.jsS
+//= requrie bootstrap.sass
 //= require bootstrap-datepicker
 //= require gritter
 //= require cocoon

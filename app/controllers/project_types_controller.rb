@@ -6,7 +6,6 @@ before_action :set_project_types, only: [:show, :edit, :update, :destroy]
 def index
 	@projects_types = ProjectType.all
 
-
 end
 
 def new
@@ -15,20 +14,19 @@ end
 
 
 def create
-		@project_type = ProjectType.new(project_type_params)
- end 
+	@project_type = ProjectType.new(project_type_params)     
 
-	    
-if @project.save
-			redirect_to @project_type, notice: 'Project Type was created successfully'
-		else
-			render :new
+		if @project_type.save
+					redirect_to @project_type, notice: 'Project Type was created successfully'
+				else
+					render :new
 		end
 end
 
 
 
 def show
+end
 	
 
 def update

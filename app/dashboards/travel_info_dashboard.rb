@@ -8,11 +8,11 @@ class TravelInfoDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    project: Field::BelongsTo.with_options(searchable: true)
+    project: Field::BelongsTo.with_options(searchable: true),
     id: Field::Number,
     hotel_name: Field::String,
     address: Field::String,
-    city: Field::String.with_options(searchable: true)
+    city: Field::String.with_options(searchable: true),
     zip: Field::String,
     state: Field::String,
     phone: Field::String,

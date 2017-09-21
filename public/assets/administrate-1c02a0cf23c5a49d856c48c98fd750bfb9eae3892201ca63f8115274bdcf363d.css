@@ -1,0 +1,5 @@
+.navigation__link:not(:last-of-type)   {
+	
+	text-decoration: none;
+
+}
